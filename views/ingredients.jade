@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 New Ingredient
+  p Time to add a new ingredient!
+  div
+    form(name='input', action='/ingredient/create', method='POST')
+      key Ingredient
+      input(type='text', name = 'iName')
+
+      key Cost
+      input(type='text', name='cName')
+      
+      input(type='submit', value='Submit')

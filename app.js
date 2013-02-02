@@ -8,6 +8,8 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
+var ingredient = require('./routes/ingredient');
+var order = require('./routes/order')
 
 var app = express();
 
@@ -29,6 +31,13 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/ingredient/new', ingredient.new);
+app.post('/ingredient/create', ingredient.create);
+app.get('/order/new', order.new);
+app.post('/order/create', order.create);
+app.get('/orders',order.list);
+app.post('/orders/delete', order.delete);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
