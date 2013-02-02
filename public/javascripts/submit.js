@@ -15,8 +15,7 @@ $(function () {
     var response = {};
     response.name = id;
     $.post("/orders/delete", response);
-
-	$('#result').html("<p>Gone!</p>")
+    $('div[value='+id+']').remove();
 
   })
 })

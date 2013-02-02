@@ -4,12 +4,12 @@ block content
 	h1 Pending Orders...
 	div
 		each order, i in orders
-			div(value=order) #{order.customerName}'s burger:
-			div
-				each ingredient, ing in order.ingredients
-					div(value=ingredient) #{ingredient.name}
-			input(class='button', id=order._id, name='deleter', type='submit', value='Complete')
-			br
-			br
-
+			div(value=order._id)
+				div(value=order) #{order.customerName}'s burger:
+				div
+					each ingredient, ing in order.ingredients
+						div(value=ingredient) #{ingredient.name}
+					input(class='button', id=order._id, name='deleter', type='submit', value='Complete')
+				br
+				br
 		#result
